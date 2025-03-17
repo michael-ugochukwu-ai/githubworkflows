@@ -1,6 +1,8 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on: 
+  pull_request:
+      types: [closed]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -29,6 +31,7 @@ jobs:
         run: |
           PR_TITLE=$(jq --raw-output .pull_request.title $GITHUB_EVENT_PATH)
           TICKET_REGEX="^([A-Z]+-[0-9]+): .+"
+          echo $PR_TITLE
           if [[ ! "$PR_TITLE" =~ $TICKET_REGEX ]]; then
             echo "PR title must follow the format <JIRA_TICKET>: <title>"
             exit 1
@@ -45,5 +48,5 @@ jobs:
           jira_url:
             "https://appliedint-helix.atlassian.net"
           jira_token:
-            "some token"
+            ${{secrets.JIRA_TOKEN}}
 
