@@ -43,4 +43,10 @@ jobs:
         with:
           ticket_key:
             ${{env.TICKET_KEY}}
+          jira_user:
+            "mosaic-connect-bot@ext.applied.co"
+          jira_url:
+            "https://appliedint-helix.atlassian.net"
+          jira_token:
+            "some token "
 
