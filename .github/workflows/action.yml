@@ -27,12 +27,12 @@ jobs:
           python-version: '3.13'
       - uses: michael-ugochukwu-ai/automations@master
         with:
-          ticket-link:
+          ticket_link:
             "some link"
-          jira-user:
+          jira_user:
             "Some user"
-          jira-url:
+          jira_url:
             "some url"
-          jira-token:
+          jira_token:
             "some token"
 
