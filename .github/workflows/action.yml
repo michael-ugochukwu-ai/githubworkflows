@@ -48,5 +48,5 @@ jobs:
           jira_url:
             "https://appliedint-helix.atlassian.net"
           jira_token:
-            "some token "
+            ${{secrets.JIRA_TOKEN}}
 
