@@ -27,7 +27,7 @@ jobs:
           python-version: '3.13'
       - uses: michael-ugochukwu-ai/automations@master
         with:
-          ticket_link:
+          ticket_key:
             "some link"
           jira_user:
             "Some user"
